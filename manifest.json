@@ -1,0 +1,20 @@
+{
+    "name": "KhanKart Extension",
+    "description": "Maximize your Khan Academy programming experience.",
+    "version": "0.1",
+    "manifest_version": 2,
+    "background": {
+        "service_worker": "background.js"
+    },
+    "permissions": ["cookies", "https://www.khanacademy.org/*"],
+    "browser_action": {
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://www.khanacademy.org/*"],
+            "js": ["main.js"],
+            "css": ["main.css"]
+        }
+    ]
+}
